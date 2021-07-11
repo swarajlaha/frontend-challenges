@@ -1,8 +1,10 @@
 import React from 'react'
 import { Alert } from 'react-bootstrap'
 import PswdCriteria from './pswdCriteria'
+import PswdStrength from './pswdStrength'
 
-const MsgField = ({ pswdCheck, pswdLenCheck }) => {
+const MsgField = ({ pswdCheck, pswdLenCheck, now }) => {
+
   return (
     <>
       <Alert variant="success">
@@ -10,7 +12,7 @@ const MsgField = ({ pswdCheck, pswdLenCheck }) => {
         <PswdCriteria pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} />
         <hr />
         <Alert.Heading>Password Strength</Alert.Heading>
-        <p>To show password strength...</p>
+        <PswdStrength pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} />
       </Alert>
     </>
   )
