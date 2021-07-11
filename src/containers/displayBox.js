@@ -14,7 +14,6 @@ const DisplayBox = () => {
 
   // Function returns last character of string
   const getLastChar = (str) => {
-    console.log('glc')
     if (str.length >= 8) {
       setPswdLenCheck(true)
     }
@@ -26,7 +25,6 @@ const DisplayBox = () => {
 
   // Check the 'lastChar' to meet conditions
   const charChecker = (lastChar) => {
-    console.log('cc')
     if (
       (lastChar?.charCodeAt(0) > 64 && lastChar?.charCodeAt(0) < 91) ||
       (lastChar?.charCodeAt(0) > 96 && lastChar?.charCodeAt(0) < 123)
@@ -47,14 +45,13 @@ const DisplayBox = () => {
     }
   }
 
-  console.log('obj>>', pswdCheck)
   return (
     <>
       <Container>
         <Row className="mt-5">
           <Col></Col>
           <Col>
-            <InputField getLastChar={getLastChar} />
+            <InputField getLastChar={getLastChar} pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} />
           </Col>
           <Col></Col>
         </Row>
