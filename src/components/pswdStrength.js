@@ -22,7 +22,7 @@ const PswdStrength = ({ now }) => {
     <>
       <p>
         <ProgressBar
-          animated
+          animated={now !== 100}
           variant={variant}
           now={now}
           label={label}
