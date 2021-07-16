@@ -12,7 +12,7 @@ const MsgField = ({ pswdCheck, pswdLenCheck, now }) => {
         <PswdCriteria pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} />
         <hr />
         <Alert.Heading>Password Strength</Alert.Heading>
-        <PswdStrength pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} />
+        <PswdStrength pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} now={now} />
       </Alert>
     </>
   )

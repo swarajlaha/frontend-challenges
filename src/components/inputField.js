@@ -2,7 +2,7 @@ import React from 'react';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 
 const InputField = ({ getLastChar, pswdCheck, pswdLenCheck }) => {
-  console.log(pswdCheck, pswdLenCheck)
+
   return (
     <>
       <InputGroup>

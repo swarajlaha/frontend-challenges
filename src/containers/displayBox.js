@@ -11,6 +11,7 @@ const DisplayBox = () => {
     specialCharCheck: false,
   })
   const [pswdLenCheck, setPswdLenCheck] = useState(false)
+  const [now, setNow] = useState(0)
 
   // Function returns last character of string
   const getLastChar = (str) => {
@@ -45,20 +46,41 @@ const DisplayBox = () => {
     }
   }
 
+  //
+  useEffect(() => {
+    if (pswdCheck.charCheck) {
+      setNow(now + 25)
+    } else if (pswdCheck.numCheck) {
+      setNow(now + 25)
+    } else if (pswdCheck.specialCharCheck) {
+      setNow(now + 25)
+    } else if (pswdLenCheck) {
+      setNow(now + 25)
+    }
+  }, [pswdCheck.charCheck, pswdCheck.numCheck, pswdCheck.specialCharCheck, pswdLenCheck])
+
   return (
     <>
       <Container>
         <Row className="mt-5">
           <Col></Col>
           <Col>
-            <InputField getLastChar={getLastChar} pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} />
+            <InputField
+              getLastChar={getLastChar}
+              pswdCheck={pswdCheck}
+              pswdLenCheck={pswdLenCheck}
+            />
           </Col>
           <Col></Col>
         </Row>
         <Row className="mt-3">
           <Col xs={3}></Col>
           <Col xs={6}>
-            <MsgField pswdCheck={pswdCheck} pswdLenCheck={pswdLenCheck} />
+            <MsgField
+              pswdCheck={pswdCheck}
+              pswdLenCheck={pswdLenCheck}
+              now={now}
+            />
           </Col>
           <Col xs={3}></Col>
         </Row>

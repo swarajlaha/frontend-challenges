@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { ProgressBar } from 'react-bootstrap'
 
-const PswdStrength = ({ pswdCheck, pswdLenCheck }) => {
+const PswdStrength = ({ now }) => {
+  const [label, setLabel] = useState('')
+  const [variant, setVariant] = useState('')
 
-console.log(pswdCheck, pswdLenCheck)
+  useEffect(() => {
+    if (now === 25) {
+      setLabel('weak')
+      setVariant('danger')
+    } else if (now === 50) {
+      setLabel('medium')
+      setVariant('warning')
+    } else if (now === 100) {
+      setLabel('strong')
+      setVariant('success')
+    }
+  })
+
   return (
     <>
       <p>
         <ProgressBar
           animated
-          variant="danger"
-          now={60}
-          label={`${'weak'}`}
+          variant={variant}
+          now={now}
+          label={label}
         />
       </p>
     </>
