@@ -33,7 +33,7 @@ const MainContainer = () => {
         <Row className="pt-3">
           <Col className="ml-5" md={5}></Col>
           <Col md={2}>
-            <SubmitButton />
+            <SubmitButton enteredtxt={enteredtxt} />
           </Col>
           <Col md={5}></Col>
         </Row>
