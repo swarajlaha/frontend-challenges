@@ -8,9 +8,14 @@ import TextdisplayCard from '../components/textdisplayCard'
 const MainContainer = () => {
 
   const [enteredtxt, setEnteredtxt] = useState('')
+  const [submittxt, setSubmittxt] = useState('')
 
   const enteredtextHandler = (e) => {
     setEnteredtxt(e.target.value)
+  }
+
+  const btnsubmitHandler = () => {
+    setSubmittxt(enteredtxt)
   }
 
   return (
@@ -33,14 +38,14 @@ const MainContainer = () => {
         <Row className="pt-3">
           <Col className="ml-5" md={5}></Col>
           <Col md={2}>
-            <SubmitButton enteredtxt={enteredtxt} />
+            <SubmitButton enteredtxt={enteredtxt} btnsubmitHandler={btnsubmitHandler} />
           </Col>
           <Col md={5}></Col>
         </Row>
         <Row className="pt-3">
           <Col md={4}></Col>
           <Col md={4}>
-            <TextdisplayCard />
+            <TextdisplayCard submittxt={submittxt} />
           </Col>
           <Col md={4}></Col>
         </Row>

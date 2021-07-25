@@ -1,11 +1,12 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-const TextdisplayCard = () => {
+const TextdisplayCard = ({ submittxt }) => {
+
   return (
     <>
       <Card>
-        <Card.Body>This is some text within a card body.</Card.Body>
+        <Card.Body>{submittxt}</Card.Body>
       </Card>
     </>
   )
