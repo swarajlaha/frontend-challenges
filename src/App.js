@@ -1,10 +1,10 @@
 import './App.css';
-import Main from '../src/password-checker/pages/Main';
+import PasswordChecker from './password-checker/pages/PasswordChecker';
 
 function App() {
   return (
     <>
-      <Main />
+      <PasswordChecker />
     </>
   );
 }
