@@ -1,6 +1,6 @@
 import './App.css';
-import AppNavbar from './commons/appNavbar';
-import Main from './pages/Main';
+import AppNavbar from '../src/password-checker/commons/appNavbar';
+import Main from '../src/password-checker/pages/Main';
 
 function App() {
   return (
