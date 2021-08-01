@@ -6,7 +6,7 @@ const AppNavbar = () => {
     <>
       <Navbar bg="dark" variant="dark" className='mt-2 ml-2 mr-2'>
         <Navbar.Brand href="#home">
-          Password Checker
+          Smart Textarea
         </Navbar.Brand>
       </Navbar>
     </>
