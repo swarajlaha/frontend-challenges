@@ -34,8 +34,13 @@ const AutosuggestInput = () => {
       axios
         .get(`http://localhost:3000/employees?q=${value}`)
         .then((res) => {
-          console.log(res.data)
-          setSearchRes(res.data)
+          if(res.data.length > 4) {
+            let shortArr = res.data
+            shortArr.splice(4, (res.data.length - 4))
+            setSearchRes(shortArr)
+          } else {
+            setSearchRes(res.data)
+          }
         })
         .catch((err) => {
           console.log(err)

@@ -6,7 +6,12 @@ const Dropdownbox = ({ searchRes }) => {
     <>
       <Card style={{ width: '24rem' }}>
         <ListGroup variant="flush">
-          {searchRes.map((sr) => <ListGroup.Item>{sr.first_name}</ListGroup.Item>)}
+          {searchRes.map((sr) => 
+            <ListGroup.Item>
+              <Card.Title>{sr.first_name}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">{sr.last_name}</Card.Subtitle>
+              <i>{sr.email}</i>
+            </ListGroup.Item>)}
         </ListGroup>
       </Card>
     </>
