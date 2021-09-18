@@ -1,12 +1,12 @@
 import React from 'react'
 import { Card, ListGroup } from 'react-bootstrap'
 
-const Dropdownbox = () => {
+const Dropdownbox = ({ searchRes }) => {
   return (
     <>
       <Card style={{ width: '24rem' }}>
         <ListGroup variant="flush">
-          <ListGroup.Item>Cras justo odio</ListGroup.Item>
+          {searchRes.map((sr) => <ListGroup.Item>{sr.first_name}</ListGroup.Item>)}
         </ListGroup>
       </Card>
     </>

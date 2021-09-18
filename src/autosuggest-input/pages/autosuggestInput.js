@@ -11,9 +11,9 @@ const AutosuggestInput = () => {
 
   const debounce = (func) => {
     let timer
-    return function(...args) {
+    return function (...args) {
       const context = this
-      if(timer) {
+      if (timer) {
         clearTimeout(timer)
       }
       timer = setTimeout(() => {
@@ -30,16 +30,19 @@ const AutosuggestInput = () => {
   }
 
   const callApi = (value) => {
-    console.log(value)
-    axios
-      .get(`http://localhost:3000/employees?q=${value}`)
-      .then((res) => {
-        console.log(res.data)
-        setSearchRes(res.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    if (value !== '') {
+      axios
+        .get(`http://localhost:3000/employees?q=${value}`)
+        .then((res) => {
+          console.log(res.data)
+          setSearchRes(res.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    } else {
+      setSearchRes([])
+    }
   }
 
   const optimisedRes = useCallback(debounce(inputChangeHandler), [])
