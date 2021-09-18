@@ -1,12 +1,15 @@
 .main-card {
   height: 450px;
   width: 900px;
+  background-color: aqua !important;
 }
 
 .main-card-narrow {
   height: 450px;
+  background-color: aqua !important;
 }
 
 .side-card {
   height: 630px;
+  background-color: burlywood !important;
 }

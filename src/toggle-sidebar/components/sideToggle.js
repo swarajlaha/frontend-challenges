@@ -1,11 +1,14 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 
-const SideToggle = () => {
+const SideToggle = ({ toggleHandler, toggle }) => {
   return (
     <>
       <Card className="side-card">
-        <Card.Body>SIDE CARD</Card.Body>
+        <Card.Body>
+          SIDE CARD <br />
+          <Button variant="outline-dark" onClick={toggleHandler}>{toggle ? '<-' : '->'}</Button>
+        </Card.Body>
       </Card>
     </>
   )

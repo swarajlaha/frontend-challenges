@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import MainCard from '../components/mainCard'
 import SideToggle from '../components/sideToggle'
 import './style.css'
 
 const PageContainer = () => {
+
+  const [toggle, setToggle] = useState(true)
+
+  // Function to handle the toggle of sidebar.
+  const toggleHandler = () => {
+    setToggle(!toggle)
+  }
+
   return (
     <>
       <Container className="mt-3">
         <Row>
           <Col>
-            <MainCard />
+            <MainCard toggle={toggle} />
           </Col>
           <Col>
-            <SideToggle />
+            <SideToggle toggle={toggle} toggleHandler={toggleHandler} />
           </Col>
         </Row>
       </Container>
