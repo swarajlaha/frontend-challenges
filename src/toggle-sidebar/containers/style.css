@@ -11,5 +11,14 @@
 
 .side-card {
   height: 630px;
+  width: 580px;
   background-color: burlywood !important;
+  position: fixed !important;
+  top: 80px;
+}
+
+.navbar-style {
+  position: sticky !important;
+  top: 0px;
+  z-index: 1000;
 }
