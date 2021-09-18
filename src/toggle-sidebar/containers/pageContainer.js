@@ -6,7 +6,6 @@ import SmallCards from '../components/smallCards'
 import './style.css'
 
 const PageContainer = () => {
-
   const [toggle, setToggle] = useState(true)
 
   // Function to handle the toggle of sidebar.
@@ -16,20 +15,16 @@ const PageContainer = () => {
 
   return (
     <>
-      <Container>
+      <Container className="ml-5">
         <Row>
           <Col>
             <MainCard toggle={toggle} />
+            <Row>
+              <SmallCards />
+            </Row>
           </Col>
           <Col>
             <SideToggle toggle={toggle} toggleHandler={toggleHandler} />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <SmallCards />
-          </Col>
-          <Col>
           </Col>
         </Row>
       </Container>
