@@ -1,0 +1,12 @@
+.main-card {
+  height: 450px;
+  width: 900px;
+}
+
+.main-card-narrow {
+  height: 450px;
+}
+
+.side-card {
+  height: 630px;
+}

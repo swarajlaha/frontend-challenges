@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap'
 const SideToggle = () => {
   return (
     <>
-      <Card>
+      <Card className="side-card">
         <Card.Body>SIDE CARD</Card.Body>
       </Card>
     </>

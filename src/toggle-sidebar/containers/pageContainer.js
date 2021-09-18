@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import MainCard from '../components/mainCard'
 import SideToggle from '../components/sideToggle'
+import './style.css'
 
 const PageContainer = () => {
   return (

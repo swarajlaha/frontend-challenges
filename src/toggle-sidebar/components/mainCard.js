@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap'
 const MainCard = () => {
   return (
     <>
-      <Card>
+      <Card className="main-card">
         <Card.Body>MAIN CARD</Card.Body>
       </Card>
     </>
