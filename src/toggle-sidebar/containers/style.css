@@ -1,0 +1,33 @@
+.main-card {
+  height: 450px;
+  width: 1080px;
+  background-color: aqua !important;
+}
+
+.main-card-narrow {
+  height: 450px;
+  width: 900px;
+  background-color: aqua !important;
+}
+
+.side-card {
+  height: 630px;
+  width: 340px;
+  background-color: burlywood !important;
+  position: fixed !important;
+  top: 80px;
+}
+
+.side-card-wide {
+  height: 630px;
+  width: 520px;
+  background-color: burlywood !important;
+  position: fixed !important;
+  top: 80px;
+}
+
+.navbar-style {
+  position: sticky !important;
+  top: 0px;
+  z-index: 1000;
+}
