@@ -63,7 +63,7 @@ const AutosuggestInput = () => {
               <Inputbox inputChangeHandler={optimisedRes} />
             </Row>
             <Row>
-              <Dropdownbox searchRes={searchRes} />
+              <Dropdownbox searchRes={searchRes} typedInput={typedInput} />
             </Row>
           </Col>
           <Col></Col>
