@@ -1,3 +1,8 @@
+/**
+  1. Run the json-server: json-server employees.js -> This is will run on PORT:3000.
+  2. Then run: npm start and type 'y' when prompted to run on a different port.
+*/
+
 import React, { useCallback, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import AppNavbar from '../commons/appNavbar'
