@@ -1,0 +1,20 @@
+.btn-scroll {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  padding: 15px;
+  border: 1px solid black !important;
+  border-radius: 4px;
+  box-shadow: 3px 3px 5px grey;
+}
+
+.btn-scroll:hover {
+  z-index: 99;
+  cursor: pointer;
+  border: 1px solid black !important;
+  border-radius: 4px;
+  background-color: black;
+  color: antiquewhite !important;
+  box-shadow: 5px 5px 5px grey;
+}
