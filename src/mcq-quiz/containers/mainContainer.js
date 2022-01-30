@@ -72,8 +72,8 @@ const MainContainer = () => {
                   setCheckIndex={setCheckIndex}
                 />
               </Row>
-              <Row style={{ marginLeft: '30%', marginTop: '2%' }}>
-                <Col md="3">
+              <Row style={{ marginTop: '2%' }}>
+                <Col md="3" style={{ left: '8%' }}>
                   {index > 0 && (
                     <Button
                       variant="outline-secondary"
@@ -83,7 +83,7 @@ const MainContainer = () => {
                     </Button>
                   )}
                 </Col>
-                <Col md="3">
+                <Col md="3" style={{ marginLeft: '50%' }}>
                   {quizquestions.length !== index + 1 && (
                     <Button
                       variant="outline-secondary"
@@ -94,7 +94,7 @@ const MainContainer = () => {
                   )}
                 </Col>
               </Row>
-              <Row style={{ marginLeft: '37%', marginTop: '2%' }}>
+              <Row style={{ marginLeft: '37%' }}>
                 <Col>
                   <Button variant="outline-success" onClick={submitBtnHandler}>
                     Submit
