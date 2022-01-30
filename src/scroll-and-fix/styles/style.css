@@ -1,0 +1,14 @@
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 100;
+}
+.sidebar-position-initial {
+  margin-top: 100%;
+}
+.sidebar-position-scroll {
+  position: fixed;
+  top: 10%;
+  scroll-behavior: smooth;
+}
