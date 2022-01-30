@@ -1,12 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppNavbar from '../commons/appNavbar'
 import QuestionNumber from '../components/questionNumber'
 import { Row, Col, Container, Button } from 'react-bootstrap'
 import Question from '../components/question'
 import Score from '../components/score'
 import { GrPrevious, GrNext } from 'react-icons/gr'
+import { questions } from '../questions'
 
 const MainContainer = () => {
+  const questionsArray = questions()
+  const [quizquestions, setQuizquestions] = useState(questionsArray)
+  const [index, setIndex] = useState(0)
+
+  // Function to handle next button clicks.
+  const nextBtnClickHandler = () => {
+    setIndex((prevIndex) => prevIndex + 1)
+  }
+
+  // Function to handle previous button clicks.
+  const prevBtnClickHandler = () => {
+    setIndex((prevIndex) => prevIndex - 1)
+  }
+
   return (
     <>
       <Row className="mb-5">
@@ -16,19 +31,35 @@ const MainContainer = () => {
         <Col md="3"></Col>
         <Col md="6">
           <Row>
-            <QuestionNumber />
-            <Question />
+            <QuestionNumber index={index} noofquest={quizquestions.length} />
+            <Question quizquestions={quizquestions} index={index} />
           </Row>
           <Row style={{ marginLeft: '30%', marginTop: '2%' }}>
             <Col md="3">
-              <Button variant="outline-secondary"><GrPrevious /></Button>
+              {index > 0 && (
+                <Button
+                  variant="outline-secondary"
+                  onClick={prevBtnClickHandler}
+                >
+                  <GrPrevious />
+                </Button>
+              )}
             </Col>
             <Col md="3">
-              <Button variant="outline-secondary"><GrNext /></Button>
+              {quizquestions.length !== index + 1 && (
+                <Button
+                  variant="outline-secondary"
+                  onClick={nextBtnClickHandler}
+                >
+                  <GrNext />
+                </Button>
+              )}
             </Col>
           </Row>
           <Row style={{ marginLeft: '37%', marginTop: '2%' }}>
-            <Col><Button variant="outline-success">Submit</Button></Col>
+            <Col>
+              <Button variant="outline-success">Submit</Button>
+            </Col>
           </Row>
         </Col>
         <Col md="3"></Col>

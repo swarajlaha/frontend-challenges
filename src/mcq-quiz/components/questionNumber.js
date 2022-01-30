@@ -1,11 +1,11 @@
 import React from "react"
 import { Alert } from "react-bootstrap"
 
-const QuestionNumber = () => {
+const QuestionNumber = ({ index, noofquest }) => {
   return (
     <>
       <Alert variant="light">
-        Question: 01/10
+        Question: {index + 1}/{noofquest}
       </Alert>
     </>
   )
