@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Button,
-  Card,
-  ListGroup,
-} from 'react-bootstrap'
+import { Button, Card, ListGroup } from 'react-bootstrap'
 import { CgRadioChecked } from 'react-icons/cg'
 
 const Question = ({
@@ -12,12 +8,10 @@ const Question = ({
   answerIndexArray,
   setAnswerIndexArray,
   checkIndex,
-  setCheckIndex
+  setCheckIndex,
 }) => {
-  
   // Function to handle user answer selection.
   const userSelectionHandler = (answerIndex) => {
-    console.log('Q: ', index, 'A: ', answerIndex)
     const ansIdxArr = [...answerIndexArray]
     ansIdxArr[index] = answerIndex
     setCheckIndex(answerIndex)
@@ -26,20 +20,21 @@ const Question = ({
 
   // Function to return a question based on the index of the questions array.
   const returnOneQuestion = () => {
-    console.log(answerIndexArray[index])
     return (
       <>
         <Card.Header>{quizquestions[index].question}</Card.Header>
         <ListGroup variant="flush">
-            {quizquestions[index].answers.map((qa, index) => (
-              <ListGroup.Item>
-                {(checkIndex === index) && <CgRadioChecked />}&nbsp;&nbsp;
-                <Button
-                  variant='outline-secondary'
-                  onClick={() => userSelectionHandler(index)}
-                >{qa}</Button>
-              </ListGroup.Item>
-            ))}
+          {quizquestions[index].answers.map((qa, index) => (
+            <ListGroup.Item>
+              {checkIndex === index && <CgRadioChecked />}&nbsp;&nbsp;
+              <Button
+                variant="outline-secondary"
+                onClick={() => userSelectionHandler(index)}
+              >
+                {qa}
+              </Button>
+            </ListGroup.Item>
+          ))}
         </ListGroup>
       </>
     )
