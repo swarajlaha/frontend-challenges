@@ -12,7 +12,6 @@ const ScrollAndFix = () => {
     let st = window.pageYOffset || document.documentElement.scrollTop;
     if(st > lastScrollTop) {
       setScrollDown(true)
-      console.log(window.screenY)
     } else {
       setScrollDown(false)
     }
