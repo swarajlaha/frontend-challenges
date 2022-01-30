@@ -9,17 +9,21 @@ import { questions } from '../questions'
 
 const MainContainer = () => {
   const questionsArray = questions()
-  const [quizquestions, setQuizquestions] = useState(questionsArray)
+  const [quizquestions] = useState(questionsArray)
   const [index, setIndex] = useState(0)
+  const [answerIndexArray, setAnswerIndexArray] = useState([])
+  const [checkIndex, setCheckIndex] = useState(-1)
 
   // Function to handle next button clicks.
   const nextBtnClickHandler = () => {
     setIndex((prevIndex) => prevIndex + 1)
+    setCheckIndex(-1)
   }
 
   // Function to handle previous button clicks.
   const prevBtnClickHandler = () => {
     setIndex((prevIndex) => prevIndex - 1)
+    setCheckIndex(-1)
   }
 
   return (
@@ -32,7 +36,7 @@ const MainContainer = () => {
         <Col md="6">
           <Row>
             <QuestionNumber index={index} noofquest={quizquestions.length} />
-            <Question quizquestions={quizquestions} index={index} />
+            <Question quizquestions={quizquestions} index={index} answerIndexArray={answerIndexArray} setAnswerIndexArray={setAnswerIndexArray} checkIndex={checkIndex} setCheckIndex={setCheckIndex} />
           </Row>
           <Row style={{ marginLeft: '30%', marginTop: '2%' }}>
             <Col md="3">
@@ -58,7 +62,7 @@ const MainContainer = () => {
           </Row>
           <Row style={{ marginLeft: '37%', marginTop: '2%' }}>
             <Col>
-              <Button variant="outline-success">Submit</Button>
+              <Button variant="outline-success" onClick={() => console.log(answerIndexArray)}>Submit</Button>
             </Col>
           </Row>
         </Col>

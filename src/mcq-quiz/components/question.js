@@ -1,32 +1,45 @@
-import React, { useEffect, useState } from 'react'
-import { ButtonGroup, Card, ListGroup, ToggleButton } from 'react-bootstrap'
+import React, { useState } from 'react'
+import {
+  Button,
+  Card,
+  ListGroup,
+} from 'react-bootstrap'
+import { CgRadioChecked } from 'react-icons/cg'
 
-const Question = ({ index, quizquestions }) => {
+const Question = ({
+  index,
+  quizquestions,
+  answerIndexArray,
+  setAnswerIndexArray,
+  checkIndex,
+  setCheckIndex
+}) => {
+  
+  // Function to handle user answer selection.
+  const userSelectionHandler = (answerIndex) => {
+    console.log('Q: ', index, 'A: ', answerIndex)
+    const ansIdxArr = [...answerIndexArray]
+    ansIdxArr[index] = answerIndex
+    setCheckIndex(answerIndex)
+    setAnswerIndexArray(ansIdxArr)
+  }
 
   // Function to return a question based on the index of the questions array.
   const returnOneQuestion = () => {
+    console.log(answerIndexArray[index])
     return (
       <>
         <Card.Header>{quizquestions[index].question}</Card.Header>
         <ListGroup variant="flush">
-          {quizquestions[index].answers.map((qa) => (
-            <ListGroup.Item>
-              <ButtonGroup>
-                <ToggleButton
-                  key={'idx'}
-                  id={`radio-1`}
-                  type="radio"
-                  variant="light"
-                  name="radio"
-                  value={'value'}
-                  checked={false}
-                  onChange={(e) => console.log(e.currentTarget.value)}
-                >
-                  &nbsp;&nbsp;&nbsp;&nbsp; {qa}
-                </ToggleButton>
-              </ButtonGroup>
-            </ListGroup.Item>
-          ))}
+            {quizquestions[index].answers.map((qa, index) => (
+              <ListGroup.Item>
+                {(checkIndex === index) && <CgRadioChecked />}&nbsp;&nbsp;
+                <Button
+                  variant='outline-secondary'
+                  onClick={() => userSelectionHandler(index)}
+                >{qa}</Button>
+              </ListGroup.Item>
+            ))}
         </ListGroup>
       </>
     )
