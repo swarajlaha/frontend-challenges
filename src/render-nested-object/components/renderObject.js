@@ -1,12 +1,26 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
 
 const RenderObject = ({ obj }) => {
   return (
     <>
-      <Card>
-        <Card.Body>Render Object</Card.Body>
-      </Card>
+      {Object.entries(obj).map(([key, value]) => {
+        if(typeof value === "object") {
+          return (
+            <>
+              <p><u>{`${key}: `}</u></p>
+              <div className='pl-3'>
+                <RenderObject obj={value} />
+              </div>
+            </>
+          )
+        } else {
+          return (
+            <>
+              <p><u>{`${key}`}</u>: {`${value}`}</p>
+            </>
+          )
+        } 
+      })}
     </>
   )
 }

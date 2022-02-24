@@ -10,6 +10,12 @@ export const getObject = () => {
           'an apple cultivar developed at the MAES Horticultural Research Center',
         Fuji:
           'an apple cultivar developed by growers at Tohoku Research Station',
+        X: {
+          a: 'A',
+          b: {
+            bee: "BEE",
+          }
+        }
       },
     },
   }
