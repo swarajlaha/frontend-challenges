@@ -31,6 +31,7 @@ const Inputbox = ({ input, setInput, robotlist, setRobotlist }) => {
             <Button
               variant="outline-success"
               onClick={generateBtnHandler}
+              disabled={input.trim() === "" ? true : false}
             >
               Generate
             </Button>
