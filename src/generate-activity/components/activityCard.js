@@ -3,9 +3,7 @@ import { Card } from 'react-bootstrap'
 import ActivityDetails from './activityDetails'
 import ActivitytoggleBtn from './activitytoggleBtn'
 
-const ActivityCard = ({ index, activity, showdetails, setShowdetails }) => {
-  const [activityIndex, setActivityIndex] = useState()
-  console.log(index, activityIndex)
+const ActivityCard = ({ index, activity, showdetails, setShowdetails, activityIndex, setActivityIndex }) => {
 
   return (
     <>
@@ -13,9 +11,9 @@ const ActivityCard = ({ index, activity, showdetails, setShowdetails }) => {
         <Card.Body>
           {activity.activity}
           <span style={{ float: 'right' }}>
-            <ActivitytoggleBtn index={index} setActivityIndex={setActivityIndex} showdetails={showdetails} setShowdetails={setShowdetails} />
+            <ActivitytoggleBtn index={index} activityIndex={activityIndex} setActivityIndex={setActivityIndex} showdetails={showdetails} setShowdetails={setShowdetails} />
           </span>
-          {showdetails && index === activityIndex && <ActivityDetails index={index} activityDetails={activity} setShowdetails={setShowdetails} />}
+          {activityIndex.length > 0 && index === activityIndex[activityIndex.length - 1] && <ActivityDetails index={index} activityDetails={activity} setShowdetails={setShowdetails} />}
         </Card.Body>
       </Card>
     </>
