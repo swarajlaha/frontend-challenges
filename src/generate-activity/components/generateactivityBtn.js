@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 
-const GenerateactivityBtn = ({ generateactivityclickHandler }) => {
+const GenerateactivityBtn = ({ generateactivityclickHandler, loading }) => {
   return (
     <>
       <Container className="mt-5 pt-5">
@@ -11,6 +11,7 @@ const GenerateactivityBtn = ({ generateactivityclickHandler }) => {
             <Button
               variant="outline-primary"
               onClick={generateactivityclickHandler}
+              disabled={loading}
             >
               Generate Activity
             </Button>
