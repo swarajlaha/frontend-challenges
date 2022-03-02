@@ -2,6 +2,7 @@ import './App.css';
 import AutosuggestInput from './autosuggest-input/pages/autosuggestInput';
 import BackToTop from './back-to-top/pages/backToTop';
 import CountryCapital from './country-capital/pages/CountryCapital';
+import ExpandingLadder from './expanding-ladder/pages/ExpandingLadder';
 import GenerateActivity from './generate-activity/pages/GenerateActivity';
 import McqQuiz from './mcq-quiz/pages/McqQuiz';
 import PasswordChecker from './password-checker/pages/PasswordChecker';
@@ -45,7 +46,10 @@ function App() {
       {/* <RenderRobots /> */}
 
       {/** Generate Activity */}
-      <GenerateActivity />
+      {/* <GenerateActivity /> */}
+
+      {/** Expanding Ladder */}
+      <ExpandingLadder />
     </>
   );
 }
