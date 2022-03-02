@@ -3,29 +3,26 @@ import { Card, Col, Container, Row } from 'react-bootstrap'
 import ActivityCard from './activityCard'
 
 const ActivitylistCard = ({ activitylist }) => {
-
   const [activityIndex, setActivityIndex] = useState([])
 
   return (
     <>
-      <Card className="mt-5 ml-5 mr-5 pl-5 pr-5">
-        <Container>
-          <Row>
-            {activitylist.map((al, index) => (
-              <Col key={index} md="6" className='mt-2 mb-2'>
-                <Card>
-                  <ActivityCard 
-                    index={index}
-                    activity={al}
-                    activityIndex={activityIndex}
-                    setActivityIndex={setActivityIndex}
-                  />
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </Card>
+      <Container className="mt-5">
+        <Row>
+          {activitylist.map((al, index) => (
+            <Col key={index} md="6" className="mt-2 mb-2">
+              <Card>
+                <ActivityCard
+                  index={index}
+                  activity={al}
+                  activityIndex={activityIndex}
+                  setActivityIndex={setActivityIndex}
+                />
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </>
   )
 }

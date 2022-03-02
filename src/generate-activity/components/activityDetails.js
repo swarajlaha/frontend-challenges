@@ -5,7 +5,7 @@ const ActivityDetails = ({ activityDetails, setShowdetails }) => {
 
   return (
     <>
-      <Alert variant='light' className='mt-2'> 
+      <Alert variant='light' className='mt-5'> 
         {Object.entries(activityDetails).map(([key, val]) => (
           <span key={key}>
             {'>'} {key} : {val} <br />

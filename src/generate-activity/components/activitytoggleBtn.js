@@ -1,13 +1,18 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-const ActivitytoggleBtn = ({ index, activityIndex, setActivityIndex }) => {
+const ActivitytoggleBtn = ({ index, activityIndex, setActivityIndex, collapse }) => {
   
   // Function to handle toggle for expand-collapse button.
   const toggleBtnClickHandler = (index) => {
-    const aiArr = [...activityIndex]
-    aiArr.push(index)
+    let aiArr = [...activityIndex]
     setActivityIndex(aiArr)
+    if(collapse) {
+      aiArr = []
+      setActivityIndex(aiArr)
+    } else {
+      aiArr.push(index)
+    }
   }
 
   return (
@@ -17,7 +22,7 @@ const ActivitytoggleBtn = ({ index, activityIndex, setActivityIndex }) => {
         size="sm"
         onClick={() => toggleBtnClickHandler(index)}
       >
-        Expand
+        {collapse ? 'Collapse' : 'Expand'}
       </Button>
     </>
   )

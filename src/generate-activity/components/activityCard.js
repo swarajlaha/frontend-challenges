@@ -11,7 +11,7 @@ const ActivityCard = ({ index, activity, activityIndex, setActivityIndex }) => {
         <Card.Body>
           {activity.activity}
           <span style={{ float: 'right' }}>
-            <ActivitytoggleBtn index={index} activityIndex={activityIndex} setActivityIndex={setActivityIndex} />
+            <ActivitytoggleBtn index={index} activityIndex={activityIndex} setActivityIndex={setActivityIndex} collapse={index === activityIndex[activityIndex.length - 1]} />
           </span>
           {activityIndex.length > 0 && index === activityIndex[activityIndex.length - 1] && <ActivityDetails index={index} activityDetails={activity} />}
         </Card.Body>
