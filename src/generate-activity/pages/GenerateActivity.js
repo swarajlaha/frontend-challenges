@@ -18,7 +18,6 @@ import axios from 'axios'
 const GenerateActivity = () => {
 
   const [activitylist, setActivitylist] = useState([])
-  const [showdetails, setShowdetails] = useState(false)
   
   // Function to fetch activities on generate activity button click.
   const generateactivityclickHandler = async () => {
@@ -41,7 +40,7 @@ const GenerateActivity = () => {
     <>
       <AppNavbar />
       <GenerateactivityBtn generateactivityclickHandler={generateactivityclickHandler} />
-      <ActivitylistCard activitylist={activitylist} showdetails={showdetails} setShowdetails={setShowdetails} />
+      <ActivitylistCard activitylist={activitylist} />
     </>
   )
 }

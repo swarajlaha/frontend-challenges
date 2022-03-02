@@ -1,14 +1,13 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-const ActivitytoggleBtn = ({ index, showdetails, setShowdetails, activityIndex, setActivityIndex }) => {
+const ActivitytoggleBtn = ({ index, activityIndex, setActivityIndex }) => {
   
   // Function to handle toggle for expand-collapse button.
   const toggleBtnClickHandler = (index) => {
     const aiArr = [...activityIndex]
     aiArr.push(index)
     setActivityIndex(aiArr)
-    setShowdetails(!showdetails)
   }
 
   return (

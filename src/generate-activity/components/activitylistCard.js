@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 import ActivityCard from './activityCard'
 
-const ActivitylistCard = ({ activitylist, showdetails, setShowdetails }) => {
+const ActivitylistCard = ({ activitylist }) => {
 
   const [activityIndex, setActivityIndex] = useState([])
 
@@ -17,8 +17,6 @@ const ActivitylistCard = ({ activitylist, showdetails, setShowdetails }) => {
                   <ActivityCard 
                     index={index}
                     activity={al}
-                    showdetails={showdetails}
-                    setShowdetails={setShowdetails}
                     activityIndex={activityIndex}
                     setActivityIndex={setActivityIndex}
                   />
