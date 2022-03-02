@@ -2,6 +2,7 @@ import './App.css';
 import AutosuggestInput from './autosuggest-input/pages/autosuggestInput';
 import BackToTop from './back-to-top/pages/backToTop';
 import CountryCapital from './country-capital/pages/CountryCapital';
+import GenerateActivity from './generate-activity/pages/GenerateActivity';
 import McqQuiz from './mcq-quiz/pages/McqQuiz';
 import PasswordChecker from './password-checker/pages/PasswordChecker';
 import RenderNestedObject from './render-nested-object/pages/RenderNestedObject';
@@ -41,7 +42,10 @@ function App() {
       {/* <RenderNestedObject /> */}
 
       {/** Render Robots */}
-      <RenderRobots />
+      {/* <RenderRobots /> */}
+
+      {/** Generate Activity */}
+      <GenerateActivity />
     </>
   );
 }
