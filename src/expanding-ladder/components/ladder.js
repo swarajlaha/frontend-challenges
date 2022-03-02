@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Ladder = ({ img }) => {
-  const ladderIds = [5, 4, 3, 2, 1];
+  const [id, setId] = useState()
+  const ladderIds = [5, 4, 3, 2, 1]
+
+  // Function to handle mouse movements by setting ladder id.
+  const setIdHandler = (id) => {
+    setId(id)
+  }
+
+  // Function to return size of respective ladder, based on ladder id.
+  const getSize = (idx) => {
+    return idx <= id ? 120 : 100
+  }
 
   return (
     <>
@@ -11,15 +22,21 @@ const Ladder = ({ img }) => {
           flexDirection: 'column',
           alignItems: 'center',
           padding: 20,
-          marginTop: '5%'
+          marginTop: '5%',
         }}
       >
         {ladderIds.map((id) => (
-          <img
-            src={img}
-            height={100}
-            width={100}
-          />
+          <>
+            <img
+              key={id}
+              src={img}
+              height={getSize(id)}
+              width={getSize(id)}
+              onMouseEnter={() => setIdHandler(id)}
+              onMouseOut={() => setId(null)}
+            />
+            <span style={{marginRight: '10%'}}>{id}</span>
+          </>
         ))}
       </div>
     </>
