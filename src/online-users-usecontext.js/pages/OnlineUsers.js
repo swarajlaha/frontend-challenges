@@ -19,12 +19,26 @@ export const UsersContext = React.createContext()
 
 const OnlineUsers = () => {
   const [userState, setUserState] = useState({
-    Bob: 1,
-    Gary: 1,
-    Jessica: 1,
-    Sam: 1,
-    Eric: 1,
+    Bob: true,
+    Gary: true,
+    Jessica: false,
+    Sam: true,
+    Eric: false,
   })
+
+  // Function to create new users list.
+  const changeRandomUser = () => {
+    const keyArr = Object.keys(userState)
+    const randomNum = Math.floor(Math.random() * keyArr.length)
+    const newUsers = Object.assign({}, userState)
+    newUsers[keyArr[randomNum]] = !userState[keyArr[randomNum]]
+    setUserState(newUsers)
+  }
+
+  useEffect(() => {
+    const interval = setInterval(changeRandomUser, 2000)
+    return () => clearInterval(interval)
+  }, [userState])
 
   return (
     <>
