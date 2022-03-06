@@ -11,6 +11,7 @@ import RenderNestedObject from './render-nested-object/pages/RenderNestedObject'
 import RenderRobots from './render-robots/pages/RenderRobots';
 import ScrollAndFix from './scroll-and-fix/pages/ScrollAndFix';
 import SmartTextarea from './smart-textarea/pages/SmartTextarea';
+import ToDoList from './to-do-list/pages/ToDoList';
 import ToggleSidebar from './toggle-sidebar/pages/ToggleSidebar';
 
 function App() {
@@ -51,7 +52,10 @@ function App() {
 
       {/** Expanding Ladder */}
       {/* <ExpandingLadder /> */}
-      <OnlineUsers />
+      {/* <OnlineUsers /> */}
+
+      {/** To Do List */}
+      <ToDoList />
     </>
   );
 }
