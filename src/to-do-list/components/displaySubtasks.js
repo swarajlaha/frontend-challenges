@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 
-const DisplaySubtasks = ({ topTask, subTasks, clickTask }) => {
+const DisplaySubtasks = ({ taskHeader, taskHeaderIdx, subTasks, clickTaskHandler }) => {
   return (
     <>
       <Card
@@ -18,9 +18,9 @@ const DisplaySubtasks = ({ topTask, subTasks, clickTask }) => {
           if (!subTask[taskText])
             return (
               <Button
-                variant="outline-dark"
+                variant="outline-danger"
                 className="mt-2 ml-2 mr-2 mb-2"
-                onClick={() => clickTask(topTask, index, taskText)}
+                onClick={() => clickTaskHandler(taskHeaderIdx, index)}
               >
                 {taskText}
               </Button>
@@ -34,9 +34,9 @@ const DisplaySubtasks = ({ topTask, subTasks, clickTask }) => {
           if (subTask[taskText])
             return (
               <Button
-                variant="outline-dark"
+                variant="outline-success"
                 className="mt-2 ml-2 mr-2 mb-2"
-                onClick={() => clickTask(topTask, index, taskText)}
+                onClick={() => clickTaskHandler(taskHeaderIdx, index)}
               >
                 {taskText}
               </Button>

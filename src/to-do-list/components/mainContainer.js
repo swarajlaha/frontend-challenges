@@ -21,6 +21,17 @@ const MainContainer = () => {
       { 'Gain some wisdom': false },
     ],
   })
+  // Function to handle user clicks on a task item.
+  const clickTaskHandler = (headerIdx, subIdx) => {
+    console.log(headerIdx, subIdx)
+    let dupList = {...list}
+    let selectedHeader = Object.values(dupList)[headerIdx]
+    console.log(selectedHeader)
+    console.log(dupList)
+    dupList = {...dupList, selectedHeader}
+    console.log(dupList)
+    /* selectedHeader[subIdx] = !selectedHeader[subIdx] */
+  }
 
   return (
     <div
@@ -32,14 +43,16 @@ const MainContainer = () => {
         paddingLeft: '28%'
       }}
     >
-      {Object.entries(list).map(([taskHeader, subTasks]) => {
+      {Object.entries(list).map(([taskHeader, subTasks], index) => {
         return (
           <>
-            <h4 className='ml-2 mt-3'>{taskHeader}</h4>
-            <div style={{ display: 'flex' }}>
+            <h4 className='ml-2 mt-3'>{taskHeader}{index}</h4>
+            <div style={{ display: 'flex' }} key={index}>
               <DisplaySubtasks
                 taskHeader={taskHeader}
+                taskHeaderIdx={index}
                 subTasks={subTasks}
+                clickTaskHandler={clickTaskHandler}
               />
             </div>
           </>
