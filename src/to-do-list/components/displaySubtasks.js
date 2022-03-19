@@ -20,7 +20,7 @@ const DisplaySubtasks = ({ taskHeader, taskHeaderIdx, subTasks, clickTaskHandler
               <Button
                 variant="outline-danger"
                 className="mt-2 ml-2 mr-2 mb-2"
-                onClick={() => clickTaskHandler(taskHeaderIdx, index)}
+                onClick={(taskText) => clickTaskHandler(taskHeaderIdx, index, taskText)}
               >
                 {taskText}
               </Button>
@@ -36,7 +36,7 @@ const DisplaySubtasks = ({ taskHeader, taskHeaderIdx, subTasks, clickTaskHandler
               <Button
                 variant="outline-success"
                 className="mt-2 ml-2 mr-2 mb-2"
-                onClick={() => clickTaskHandler(taskHeaderIdx, index)}
+                onClick={(taskText) => clickTaskHandler(taskHeaderIdx, index, taskText)}
               >
                 {taskText}
               </Button>

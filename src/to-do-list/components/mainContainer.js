@@ -3,6 +3,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap'
 import CompletedCard from './completedCard'
 import TodoCard from './todoCard'
 import DisplaySubtasks from './displaySubtasks'
+import _ from 'lodash'
 
 const MainContainer = () => {
   const [list, setList] = useState({
@@ -22,15 +23,9 @@ const MainContainer = () => {
     ],
   })
   // Function to handle user clicks on a task item.
-  const clickTaskHandler = (headerIdx, subIdx) => {
-    console.log(headerIdx, subIdx)
-    let dupList = {...list}
-    let selectedHeader = Object.values(dupList)[headerIdx]
-    console.log(selectedHeader)
-    console.log(dupList)
-    dupList = {...dupList, selectedHeader}
-    console.log(dupList)
-    /* selectedHeader[subIdx] = !selectedHeader[subIdx] */
+  const clickTaskHandler = (headerIdx, subIdx, taskText) => {
+    const newList = _.cloneDeep(list)
+    console.log(newList[headerIdx])
   }
 
   return (
