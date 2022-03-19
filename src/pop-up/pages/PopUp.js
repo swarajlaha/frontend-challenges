@@ -10,7 +10,7 @@ const PopUp = () => {
   return (
     <>
       <AppNavbar />
-      <InputTextbox />
+      <InputTextbox list={list} setList={setList} />
       <DisplayList list={list} />
     </>
   )
