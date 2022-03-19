@@ -7,6 +7,7 @@ import GenerateActivity from './generate-activity/pages/GenerateActivity';
 import McqQuiz from './mcq-quiz/pages/McqQuiz';
 import OnlineUsers from './online-users-usecontext.js/pages/OnlineUsers';
 import PasswordChecker from './password-checker/pages/PasswordChecker';
+import PopUp from './pop-up/pages/PopUp';
 import RenderNestedObject from './render-nested-object/pages/RenderNestedObject';
 import RenderRobots from './render-robots/pages/RenderRobots';
 import ScrollAndFix from './scroll-and-fix/pages/ScrollAndFix';
@@ -55,7 +56,9 @@ function App() {
       {/* <OnlineUsers /> */}
 
       {/** To Do List */}
-      <ToDoList />
+      {/* <ToDoList /> */}
+
+      <PopUp />
     </>
   );
 }
