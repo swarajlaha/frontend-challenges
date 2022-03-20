@@ -4,6 +4,7 @@ import FullTextPopUp from './fullTextPopUp'
 
 const DisplayList = ({ list }) => {
   const [show, setShow] = useState(false)
+  const [modalText, setModalText] = useState('')
 
   const shortened = (str) => {
     const strArr = str.split('')
@@ -16,7 +17,9 @@ const DisplayList = ({ list }) => {
 
   const showPopup = (str) => {
     str.length > 6 ? setShow(true) : setShow(false)
+    setModalText(str)
   }
+  
 
   return (
     <>
@@ -32,7 +35,7 @@ const DisplayList = ({ list }) => {
                       <li onClick={() => showPopup(l)}>
                         {l.length > 6 ? shortened(l) : l}
                       </li>
-                      <FullTextPopUp show={show} setShow={setShow} text={l} />
+                      <FullTextPopUp show={show} setShow={setShow} text={modalText} />
                     </>
                   ))}
                 </ul>
