@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
-const UsersList = () => {
+const UsersList = ({ users }) => {
   return (
     <>
       <Row className="mt-5">
@@ -9,7 +9,16 @@ const UsersList = () => {
         <Col>
           <Card>
             <Card.Header>Users</Card.Header>
-            <Card.Body></Card.Body>
+            <Card.Body>
+              <ul>
+                {users.map((u, index) => (
+                  <li key={index}>
+                    {u.name.title}{'. '}{u.name.first}{' '}{u.name.last}
+                    <br />
+                  </li>
+                ))}
+              </ul>
+            </Card.Body>
           </Card>
         </Col>
         <Col></Col>
