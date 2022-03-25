@@ -1,7 +1,8 @@
 import React from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
 
-const Inputbox = () => {
+const Inputbox = ({ inputChangeHandler }) => {
+
   return (
     <>
       <Row className='mt-5'>
@@ -9,7 +10,7 @@ const Inputbox = () => {
         <Col className='mt-5'>
           <Form>
             <Form.Label>User</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control type="text" onChange={(e) => inputChangeHandler(e)} />
           </Form>
         </Col>
         <Col></Col>

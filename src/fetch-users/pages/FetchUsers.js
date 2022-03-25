@@ -7,6 +7,7 @@ import axios from 'axios'
 const FetchUsers = () => {
   
   const [users, setUsers] = useState([])
+  const [typedinput, setTypedinput] = useState('')
 
   useEffect(() => {
     getUsers()
@@ -14,7 +15,7 @@ const FetchUsers = () => {
 
   const getUsers = () => {
     axios
-      .get(`https://randomuser.me/api?results=2`)
+      .get(`https://randomuser.me/api?results=10`)
       .then((res) => {
         setUsers(res?.data?.results)
       })
@@ -22,12 +23,16 @@ const FetchUsers = () => {
         console.log(err)
       })
   }
-console.log(users)
+
+  const inputChangeHandler = (e) => {
+    setTypedinput(e.target.value)
+  }
+
   return (
     <>
       <AppNavbar />
-      <Inputbox />
-      <UsersList users={users} />
+      <Inputbox inputChangeHandler={inputChangeHandler} />
+      <UsersList users={users} typedinput={typedinput} />
     </>
   )
 }
