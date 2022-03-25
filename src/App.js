@@ -3,6 +3,7 @@ import AutosuggestInput from './autosuggest-input/pages/autosuggestInput';
 import BackToTop from './back-to-top/pages/backToTop';
 import CountryCapital from './country-capital/pages/CountryCapital';
 import ExpandingLadder from './expanding-ladder/pages/ExpandingLadder';
+import FetchUsers from './fetch-users/pages/FetchUsers';
 import GenerateActivity from './generate-activity/pages/GenerateActivity';
 import McqQuiz from './mcq-quiz/pages/McqQuiz';
 import OnlineUsers from './online-users-usecontext.js/pages/OnlineUsers';
@@ -58,7 +59,10 @@ function App() {
       {/** To Do List */}
       {/* <ToDoList /> */}
 
-      <PopUp />
+      {/** Pop Up */}
+      {/* <PopUp /> */}
+
+      <FetchUsers />
     </>
   );
 }
