@@ -8,6 +8,7 @@ const FetchUsers = () => {
   
   const [users, setUsers] = useState([])
   const [typedinput, setTypedinput] = useState('')
+  const [criteria, setCriteria] = useState({ startswith: true, includes: true })
 
   useEffect(() => {
     getUsers()
@@ -28,11 +29,19 @@ const FetchUsers = () => {
     setTypedinput(e.target.value)
   }
 
+  const criteriaChangeHandler = (criteriaNum) => {
+    if(criteriaNum === 1) {
+      setCriteria({...criteria, startswith: !criteria.startswith})
+    } else {
+      setCriteria({...criteria, includes: !criteria.includes})
+    }
+  }
+
   return (
     <>
       <AppNavbar />
-      <Inputbox inputChangeHandler={inputChangeHandler} />
-      <UsersList users={users} typedinput={typedinput} />
+      <Inputbox inputChangeHandler={inputChangeHandler} criteria={criteria} criteriaChangeHandler={criteriaChangeHandler} />
+      <UsersList users={users} typedinput={typedinput} criteria={criteria} />
     </>
   )
 }

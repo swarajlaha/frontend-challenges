@@ -1,11 +1,42 @@
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
-const UsersList = ({ users, typedinput }) => {
+const UsersList = ({ users, typedinput, criteria }) => {
+  console.log(criteria)
   const conditionCheck = (user) => {
-    return `${user.name.first} ${user.name.last}`
-      .toLowerCase()
-      .includes(typedinput.toLowerCase())
+    // Only startswith
+    if (criteria.startswith && !criteria.includes) {
+      return `${user.name.first} ${user.name.last}`
+        .toLowerCase()
+        .startsWith(typedinput.toLowerCase())
+    } 
+    
+    // Both startswith & includes
+    else if (criteria.startswith && criteria.includes) {
+      return `${user.name.first} ${user.name.last}`
+        .toLowerCase()
+        .startsWith(typedinput.toLowerCase()) && 
+        `${user.name.first} ${user.name.last}`
+        .toLowerCase()
+        .includes(typedinput.toLowerCase())
+    }
+
+    // Both startswith & includes
+    else if (criteria.startswith && criteria.includes) {
+      return `${user.name.first} ${user.name.last}`
+        .toLowerCase()
+        .startsWith(typedinput.toLowerCase()) && 
+        `${user.name.first} ${user.name.last}`
+        .toLowerCase()
+        .includes(typedinput.toLowerCase())
+    }
+
+    // Only includes
+    else if (criteria.includes) {
+      return `${user.name.first} ${user.name.last}`
+        .toLowerCase()
+        .includes(typedinput.toLowerCase())
+    }
   }
 
   return (
