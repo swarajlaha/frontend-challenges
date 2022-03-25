@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
 const UsersList = ({ users, typedinput, criteria }) => {
-  console.log(criteria)
   const conditionCheck = (user) => {
     // Only startswith
     if (criteria.startswith && !criteria.includes) {
