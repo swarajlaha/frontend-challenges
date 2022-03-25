@@ -2,6 +2,12 @@ import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
 const UsersList = ({ users, typedinput }) => {
+  const conditionCheck = (user) => {
+    return `${user.name.first} ${user.name.last}`
+      .toLowerCase()
+      .includes(typedinput.toLowerCase())
+  }
+
   return (
     <>
       <Row className="mt-5">
@@ -29,11 +35,7 @@ const UsersList = ({ users, typedinput }) => {
             <Card.Body>
               <ul>
                 {users
-                  .filter((user) =>
-                    `${user.name.first} ${user.name.last}`
-                      .toLowerCase()
-                      .startsWith(typedinput.toLowerCase()),
-                  )
+                  .filter((user) => conditionCheck(user))
                   .map((user, index) => {
                     return (
                       <li key={index}>
