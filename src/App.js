@@ -15,6 +15,7 @@ import ScrollAndFix from './scroll-and-fix/pages/ScrollAndFix';
 import SmartTextarea from './smart-textarea/pages/SmartTextarea';
 import ToDoList from './to-do-list/pages/ToDoList';
 import ToggleSidebar from './toggle-sidebar/pages/ToggleSidebar';
+import Newsletter from './newsletter-card/pages/Newsletter'
 
 function App() {
   return (
@@ -62,7 +63,10 @@ function App() {
       {/** Pop Up */}
       {/* <PopUp /> */}
 
-      <FetchUsers />
+      {/** Fetch Users */}
+      {/* <FetchUsers /> */}
+
+      <Newsletter />
     </>
   );
 }
