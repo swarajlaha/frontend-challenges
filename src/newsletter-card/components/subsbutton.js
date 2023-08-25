@@ -1,10 +1,10 @@
 import { Button } from "react-bootstrap"
 
-const Subsbutton = () => {
+const Subsbutton = ({ onSubsBtnClick }) => {
 
   return (
     <>
-      <Button variant="dark">Subscribe</Button>
+      <Button variant="dark" onClick={() => onSubsBtnClick()}>Subscribe</Button>
     </>
   )
 }
